@@ -1,0 +1,126 @@
+<div class='title-contents'>  
+    <ul class='possible'>
+      <li class='mentor'></li>
+        <h1 class='exp'>
+          <span class='exp-text'>Make a dream come true</span>
+        </h1>
+        <p class='exp-description'>
+        <span>1人1口$1から抽選に参加できるグローバル宝くじ。収益金の一部は慈善団体に寄付しています</span>
+        <span><%= image_tag "asia.png", alt: "", id: "assets", class: "lang-image", width: "200px" %></span>
+        </p>
+      </li>
+          
+      <li class='mentor'></li>
+        <h1 class='exp2'>
+          <span class='exp2-text'>Strike it rich × contribution</span>
+        </h1>
+        <p class='exp2-description'>
+        <span>あなたの参加が世界の誰かを救う手助けになっています</span>
+        <span><%= image_tag "money.png", alt: "", id: "assets", class: "lang-image2", width: "200px" %></span>
+        </p>
+      </li>
+      
+      <li class='mentor'></li>
+        <h1 class='exp3'>
+          <span class='exp3-text'>Every Friday is your chance</span>
+        </h1>
+        <p class='exp3-description'>
+        <span>毎週金曜日があなたの抽選日です。毎週AnyOneを楽しむことができます</span>
+        <span><%= image_tag "lucky.png", alt: "", id: "assets", class: "lang-image3", width: "200px" %></span>
+        </p>
+      </li>
+
+
+
+     
+<%# 購入機能 %>
+      <div class='transaction-contents'>
+        <div class='transaction-main'>
+          <h1 class='transaction-title-text'>
+                      購入する<br>
+            Confirmation of purchase details<br>
+            ⬇︎<br>
+            ⬇︎<br>
+            ⬇︎
+          </h1>
+      </div>
+    
+<%# 購入内容の表示 %>
+    <div class='buy-item-info'>
+      <%= image_tag "asia.png", class: 'buy-item-img' %>
+      <div class='buy-item-right-content'>
+        <h2 class='buy-item-text'>
+          <%= "1dream" %>
+        </h2>
+        <div class='buy-item-price'>
+          <p class='item-price-sub-text'> $1 </p>
+        </div>
+      </div>
+    </div>
+    <%# /購入内容の表示 %>
+
+    <%# 支払額の表示 %>
+    <div class='item-payment'>
+      <h1 class='item-payment-title'> payment </h1>
+      <p class='item-payment-price'>$1</p>
+    </div>
+    <%# /支払額の表示 %>
+
+    <%= form_with  id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%# カード情報の入力 %>
+    <%# <%= render 'shared/error_messages', model: @ticket%> 
+
+    <div class='credit-card-form'>
+      <h1 class='info-input-haedline'>
+        credit card
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">カード情報</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field 'number', class:"input-default", id:"card-number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+        <div class='available-card'>
+          <%= image_tag 'card-visa.gif', class: 'card-logo'%>
+          <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
+          <%= image_tag 'card-jcb.gif', class: 'card-logo'%>
+          <%= image_tag 'card-amex.gif', class: 'card-logo'%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">有効期限</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-expiration-date-wrap'>
+          <%= f.text_area 'exp_month', class:"input-expiration-date", id:"card-exp-month", placeholder:"例)3" %>
+          <p>月</p>
+          <%= f.text_area 'exp_year', class:"input-expiration-date", id:"card-exp-year", placeholder:"例)23" %>
+          <p>年</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">セキュリティコード</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field "cvc",class:"input-default", id:"card-cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+      </div>
+    </div>
+    <div class='buy-btn'>
+      <%= f.submit "BUY" ,class:"buy-red-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<%# 購入機能 %>
+
+   
+<%# BUYボタン %>
+<div class='purchase-btn'>
+  <a class="btn btn-custom01">
+  <span class="btn-custom01-front">BUY</span>
+  <i class="fas fa-angle-right fa-position-right"></i>
+  </a>
+</div>
+<%# BUYボタン %>
