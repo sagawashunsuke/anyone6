@@ -670,7 +670,7 @@
    line-height: 1.57;
    letter-spacing: 0.15em;
    font-size: 16px;
-   color: #666;
+   color: white;
    font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
    margin: 0;
  }
@@ -725,18 +725,21 @@
  header.header div.header__bar.row div.grid-6 a.post {
    padding: 8px 20px;
    font-size: 14px;
-   border: 2px solid #57C3E9;
-   color: #57C3E9;
+   border: 3px solid #CCFFFF;
+   color: #CCFFFF;
    font-weight: bold;
    text-align: center;
    border-radius: 3px;
    display: inline-block;
+   position: relative;
+   top:45px;
+   left: 200px;
  }
  
  .btn:hover,
  header.header div.header__bar.row div.grid-6 a.post:hover {
-   border-color: #9bdbf2;
-   color: #9bdbf2;
+   border-color: pink;
+   color: pink;
  }
  
  .title {
@@ -767,12 +770,15 @@
  
  header.header div.header__bar.row {
    position: relative;
+   bottom: 40px;
  }
  
  header.header div.header__bar.row h1.grid-6 {
    font-size: 20px;
    line-height: 41px;
    float: left;
+   position: relative;
+   top: 40px;
  }
  
  header.header div.header__bar.row h1.grid-6 a {
@@ -797,7 +803,7 @@
  }
  
  header.header .user_nav span {
-   top: 5px;
+   top: 50px;
    display: block;
    float: left;
    margin-left: 30px;
@@ -806,6 +812,7 @@
    font-size: 1em;
    cursor: pointer;
    position: relative;
+   color: white;
  }
  
  header.header .user_nav span:after {
@@ -821,16 +828,15 @@
  
  header.header .user_nav ul {
    display: none;
-   position: absolute;
-   top: 46px;
-   right: 0;
-   border-left: 1px solid #d8d8d8;
-   border-right: 1px solid #d8d8d8;
+  //  position: absolute;
+   position: relative;
+   top: 20px;
+   left: 330px;
    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
  }
  
  header.header .user_nav ul li {
-   background-color: #f0f0f0;
+   font-size: 5px;
  }
  
  header.header .user_nav ul li a {
@@ -1024,11 +1030,8 @@
  }
  
  .container {
-   margin: 20px 0;
-   padding: 30px;
-   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-   background-color: white;
-   box-sizing: border-box;
+  color: white;
+   
  }
  
  .container h3 {
@@ -1036,7 +1039,8 @@
    text-align: center;
    font-weight: normal;
    font-size: 20px;
-   color: #666;
+   color: white;
+
  }
  
  .comments {
@@ -1198,10 +1202,9 @@
 
 .purchase-btn {
   width: 80px;
-  background: lightslategray;
   text-align: center;
   border-radius: 4%;
-  bottom: 32px;
+  bottom: 50px;
   right: 31px;
   position: fixed;
 }
@@ -1391,3 +1394,4 @@
   left: 390px;
   width: 600px;
 }
+
