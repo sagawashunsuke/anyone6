@@ -9,15 +9,32 @@ class TicketsController < ApplicationController
   end
 
   def create
-    Ticket.create(ticket_params)
+    # Ticket.create(ticket_params)
+    @ticket = Ticket.new(ticket_params)
+    if @ticket.valid?
+      pay_ticket
+      @ticket.save
+      return redirect_to root_path
+    else
+      render 'index'
+    end
   end
 
 
   private
 
   def ticket_params
-    params.require(:ticket).permit(:name).merge(user_id: current_user.id)
+    # @ticket = Ticket.find(params[:ticket_id])
+    params.permit(:token, :price)
   end
 
-  
+  def pay_ticket
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp::Charge.create(
+      amount: 100,  # 商品の値段
+      card: ticket_params[:token],    # カードトークン
+      currency: 'jpy'                 # 通貨の種類
+    )
+  end
+
 end

@@ -8,7 +8,8 @@ require("popper")
 require("bootstrap")
 require("rails/ujs")
 require("activestorage")
-require("turbolinks")
+require("../card")
+// require("turbolinks")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
