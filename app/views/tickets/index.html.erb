@@ -1,14 +1,34 @@
 <div class='title-contents'>
-<%= video_tag "earth.mov", class: "landing_video", loop: true, autoplay: true, muted: true %>
+<%= video_tag "earth.mov", class: "landing_video", loop: true, autoplay: true, muted: true, width: "100%" %>
     <ul class='possible'>
       <li class='mentor'></li>
         <h1 class='exp'>
           <span class='exp-text'>Make a dream come true</span>
         </h1>
-        <p class='exp-description'>
-        <span>1人1口$1から抽選に参加できるグローバル宝くじ。収益金の一部は慈善団体に寄付しています</span>
+        <a class='exp-description'>
+        <span>1人1口$1から抽選に参加できるグローバル宝くじ</span>
         <span><%= image_tag "asia.png", alt: "", id: "assets", class: "lang-image", width: "200px" %></span>
-        </p>
+        </a>
+      </li>
+
+      <li class='mentor2'></li>
+        <h1 class='exp2'>
+          <span class='exp2-text'>Strike it rich × contribution</span>
+        </h1>
+        <a class='exp2-description'>
+        <span>収益金の一部は慈善団体に寄付しています</span>
+        <span><%= image_tag "money.png", alt: "", id: "assets", class: "lang-image2", width: "200px" %></span>
+        </a>
+      </li>
+
+      <li class='mentor3'></li>
+        <h1 class='exp3'>
+          <span class='exp3-text'>Every Friday is your chance</span>
+        </h1>
+        <a class='exp3-description'>
+        <span>毎週金曜日があなたの抽選日です</span>
+        <span><%= image_tag "lucky.png", alt: "", id: "assets", class: "lang-image3", width: "200px" %></span>
+        </a>
       </li>
           
 <%# 購入機能 %>
