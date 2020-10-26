@@ -59,3 +59,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'payjp'
+
+group :production do
+  gem 'rails_12factor'
+end
