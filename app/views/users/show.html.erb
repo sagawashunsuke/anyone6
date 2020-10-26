@@ -1,0 +1,125 @@
+<div class="have-ticket">
+  <p><%= @name %>さんはチケットを持っています！</p>
+  
+      <%# <span class="name"><%= ticket.price %>
+      <head>
+<meta charset="utf-8">
+<title>スロットマシーン</title>
+<style>
+input {
+	width:40px;
+	font-size:30px;
+  text-align:center;
+}
+button {
+	width:40px;
+}
+.x1 {
+	padding:10px 0;
+}
+.x1 div {
+	float:left;
+	width:60px;
+	text-align:center;
+}
+</style>
+<script>
+window.onload = function() {
+	var a = document.getElementById('a');
+	var b1 = document.getElementById('b1');
+	var b2 = document.getElementById('b2');
+	var b3 = document.getElementById('b3');
+	var c1 = document.getElementById('c1');
+	var c2 = document.getElementById('c2');
+	var c3 = document.getElementById('c3');
+	var t1 = null;
+	var t2 = null;
+	var t3 = null;
+
+	function start() {
+		if (t1) {
+			clearInterval(t1);
+		}
+		if (t2) {
+			clearInterval(t2);
+		}
+		if (t3) {
+			clearInterval(t3);
+		}
+		c1.value = Math.floor(Math.random() * 10);
+		c2.value = Math.floor(Math.random() * 10);
+		c3.value = Math.floor(Math.random() * 10);
+		t1 = setInterval(function () {
+			c1.value = (+c1.value + 1) % 10;
+		}, 50);
+		t2 = setInterval(function () {
+			c2.value = (+c2.value + 1) % 10;
+		}, 50);
+		t3 = setInterval(function () {
+			c3.value = (+c3.value + 1) % 10;
+		}, 50);
+	}
+
+	function stop1() {
+		if (t1) {
+			clearInterval(t1);
+			t1 = null;
+		}
+		check();
+	}
+
+	function stop2() {
+		if (t2) {
+			clearInterval(t2);
+			t2 = null;
+		}
+		check();
+	}
+
+	function stop3() {
+		if (t3) {
+			clearInterval(t3);
+			t3 = null;
+		}
+		check();
+	}
+
+	function check() {
+		if (!t1 && !t2 && !t3) {
+			if (c1.value == c2.value && c1.value == c3.value) {
+				alert('Congratulations！');
+			} else {
+				alert('はずれ！');
+			}
+		}
+	}
+
+	a.addEventListener('click', start);
+	b1.addEventListener('click', stop1);
+	b2.addEventListener('click', stop2);
+	b3.addEventListener('click', stop3);
+
+	start();
+}
+</script>
+</head>
+<body>
+	<button type="button" id="a">運試し</button>
+	<div class="x1">
+		<div>
+			<input type="text" id="c1">
+			<button type="button" id="b1">stop</button>
+		</div>
+		<div>
+			<input type="text" id="c2">
+			<button type="button" id="b2">stop</button>
+		</div>
+		<div>
+			<input type="text" id="c3">
+			<button type="button" id="b3">stop</button>
+		</div>
+	</div>
+</body>
+</html>
+    
+</div>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "tickets#index"
   post '/ticket/guest_sign_in', to: 'tickets#new_guest'
   resources :tickets do
+    resources :users
     resources :orders
   end
 end
